@@ -13,8 +13,8 @@ console.log('area: ', area)
 // con dimenciones de:
 // base = 30 , altura 100
 // nota: el area de un rectangulo es de base por altura. 
-base=30
-altura=100
+let base=30
+let altura=100
 areaRectangulo =base*altura
 console.log("El area del rectangulo es:",areaRectangulo)
 
