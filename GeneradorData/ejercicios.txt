@@ -1,0 +1,10 @@
+Filtrar por género:
+Filtrar por edad mayor a 30:
+Filtrar por estado civil "Soltero":
+Filtrar por nombre que contenga una subcadena "Per"
+
+
+V2
+Filtrar por género "Femenino" y estado civil "Soltero":
+Filtrar por género "Masculino" o edad mayor a 40:
+Filtrar por género "Femenino" y edad menor a 30, o estado civil "Casado":
