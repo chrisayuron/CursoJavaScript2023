@@ -1,0 +1,11 @@
+a partir del codigo fuente llamado index.html
+
+- crear una funcion para actualizar el contenido en el div definido  'miElemento'
+- crear una funcion para imprimir toda la informacion definida en el json por cada persona, 
+
+reto:
+- generar botones de filtrado (puede usar alguno de los filtros de ejemplo del ejercicio pasado)
+    - genero
+    - edad
+    - estado civil
+

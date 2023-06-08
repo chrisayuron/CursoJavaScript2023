@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actualizar Elementos en HTML</title>
+</head>
+<body>
+  <div id="miElemento">Texto inicial</div>
+  <button id="miBoton">Actualizar</button>
+
+  <script>
+
+    personas = [
+        {
+        "nombre": "Persona 1",
+        "genero": "Femenino",
+        "edad": 38,
+        "estadoCivil": "Casado"
+        },
+        {
+        "nombre": "Persona 2",
+        "genero": "Masculino",
+        "edad": 27,
+        "estadoCivil": "Divorciado"
+        },
+        {
+        "nombre": "Persona 3",
+        "genero": "Masculino",
+        "edad": 38,
+        "estadoCivil": "Soltero"
+        },
+        {
+        "nombre": "Persona 4",
+        "genero": "Femenino",
+        "edad": 60,
+        "estadoCivil": "Casado"
+        },
+        {
+        "nombre": "Persona 5",
+        "genero": "Femenino",
+        "edad": 19,
+        "estadoCivil": "Casado"
+        },
+        {
+        "nombre": "Persona 6",
+        "genero": "Femenino",
+        "edad": 20,
+        "estadoCivil": "Soltero"
+        },
+        {
+        "nombre": "Persona 7",
+        "genero": "Masculino",
+        "edad": 38,
+        "estadoCivil": "Casado"
+        },
+        {
+        "nombre": "Persona 8",
+        "genero": "Femenino",
+        "edad": 65,
+        "estadoCivil": "Soltero"
+        },
+        {
+        "nombre": "Persona 9",
+        "genero": "Femenino",
+        "edad": 19,
+        "estadoCivil": "Soltero"
+        },
+        {
+        "nombre": "Persona 10",
+        "genero": "Masculino",
+        "edad": 41,
+        "estadoCivil": "Divorciado"
+        }
+    ]
+    var miElemento = document.getElementById('miElemento');
+    var miBoton = document.getElementById('miBoton');
+
+    miBoton.addEventListener('click', function() {
+    
+        let new_text = ''
+        personas.forEach(persona => {
+            new_text = `${new_text} </br> ${persona.nombre} `
+        });
+
+        miElemento.innerHTML = new_text;
+    });
+
+    
+  </script>
+</body>
+</html>
