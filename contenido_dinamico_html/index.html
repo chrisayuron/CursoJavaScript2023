@@ -6,24 +6,25 @@
 <body>
   <div id="miElemento">Texto inicial</div>
   <button id="miBoton">Actualizar</button>
+  <button id="filtroGeneroFemenino">filtro Genero Femenino</button>
 
   <script>
 
     personas = [
         {
-        "nombre": "Persona 1",
+        "nombre": "juan",
         "genero": "Femenino",
         "edad": 38,
         "estadoCivil": "Casado"
         },
         {
-        "nombre": "Persona 2",
+        "nombre": "Pedro",
         "genero": "Masculino",
         "edad": 27,
         "estadoCivil": "Divorciado"
         },
         {
-        "nombre": "Persona 3",
+        "nombre": "matias",
         "genero": "Masculino",
         "edad": 38,
         "estadoCivil": "Soltero"
@@ -75,16 +76,14 @@
     var miBoton = document.getElementById('miBoton');
 
     miBoton.addEventListener('click', function() {
-    
         let new_text = ''
         personas.forEach(persona => {
-            new_text = `${new_text} </br> ${persona.nombre} `
+            new_text = `${new_text} </br> ${persona.nombre} -- ${persona.edad} -- ${persona.estadoCivil}`
         });
-
         miElemento.innerHTML = new_text;
     });
 
-    
+
   </script>
 </body>
 </html>
