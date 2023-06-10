@@ -7,7 +7,10 @@
   <div id="miElemento">Texto inicial</div>
   <button id="miBoton">Actualizar</button>
   <button id="filtroGeneroFemenino">filtro Genero Femenino</button>
+  <br>
 
+  <input type="text" id="input_buscar"> 
+  <button id="btn_buscar"> Buscar </button>
   <script>
 
     personas = [
@@ -83,6 +86,20 @@
         miElemento.innerHTML = new_text;
     });
 
+    // Filtrado:
+    var btn_buscar = document.getElementById('btn_buscar');
+
+    btn_buscar.addEventListener('click', function() {
+      var input_buscar = document.getElementById('input_buscar');
+      var valor_a_buscar = input_buscar.value
+        let new_text = ''
+        personas.forEach(persona => {
+            if (persona.nombre == valor_a_buscar) {
+              new_text = `${new_text} </br> ${persona.nombre} -- ${persona.edad} -- ${persona.estadoCivil}`
+            }
+        });
+        miElemento.innerHTML = new_text;
+    });
 
   </script>
 </body>
