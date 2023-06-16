@@ -19,7 +19,7 @@ const Pizza = ({ nombre, ingredientes, precio,foto }) => {
       <img className='imagen' src={foto}/><br />
       <p>Ingredientes: {ingredientes}</p>
       <p>Precio: ${precio}</p>
-      <p>Cantidad de rebanadas restantes: {cantidadRebanadas}</p>
+      <p>Cantidad de rebanadas restantes: <span>{cantidadRebanadas}</span></p>
       <button onClick={comerRebanada}>Comer una rebanada</button>
       
     </div>

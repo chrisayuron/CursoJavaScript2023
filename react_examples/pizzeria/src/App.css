@@ -53,11 +53,12 @@ h1{
 }
 .pizza{
   border: solid 1px;
-  width: 350px;
+  width: 450px;
   padding: 2vh;
   display: grid;
   place-items: center;
   margin: 1vh auto;
+  font-size: 2vh;
 }
 
 .pizza p{
@@ -71,4 +72,21 @@ h1{
 .pizza p:nth-child(5){
   color: red;
   font-weight: 900;
+}
+
+.pizza button{
+  padding: 1.5vh;
+  border-radius: 1vh;
+  margin: 1vh;
+  background-color: #0404c4;
+  box-shadow: 0px 0px 1px 1px #2121e4;
+  color: #fff;
+  font-weight: 800;
+  font-size: 2vh;
+}
+
+span{
+  color:green;
+  font-size: 2.5vh;
+  font-weight: 800;
 }
