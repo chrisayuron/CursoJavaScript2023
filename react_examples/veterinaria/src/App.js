@@ -4,10 +4,10 @@ import personas from './personas.js';
 import mascotas from './mascotas.js';
 // componente persona
 
-const Personas=()=>{
-    return (
-      personas.map(persona=>(
-        <div className="card persona text-bg-info mb-3">
+function Persona(props){
+  const { persona } = props;
+  return (
+    <div className="card persona text-bg-info mb-3">
           <h2 class="card-header text-center">ID: {persona.id}</h2>
        <div className="card-body">
             <h5 className="card-title">DATOS</h5>
@@ -17,6 +17,14 @@ const Personas=()=>{
         <a href="#" className="btn btn-dark">Ver</a>
       </div>
     </div>
+  )
+}
+
+
+const Personas=()=>{
+    return (
+      personas.map(persona=>(
+        <Persona persona={persona}/>
       )
     )
   )
@@ -60,6 +68,9 @@ const Mascotas=()=>{
 //componeten mascota
 // const mascotas(){};
 function App() {
+  const persona = {
+    
+  }
   return (
     <div className="App">
      <h1 className='my-3'>VETERINARIA</h1> 
@@ -71,7 +82,8 @@ function App() {
       <div className='lista'>
       <Mascotas></Mascotas>
       </div>
-      
+      <Persona persona={persona}/>
+
     </div>
   );
 }
