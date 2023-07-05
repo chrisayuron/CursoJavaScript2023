@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MascotaAlimentos/static/css/main.d9391aac.css",
+    "main.js": "/MascotaAlimentos/static/js/main.faed269c.js",
+    "static/js/787.28525a86.chunk.js": "/MascotaAlimentos/static/js/787.28525a86.chunk.js",
+    "index.html": "/MascotaAlimentos/index.html",
+    "main.d9391aac.css.map": "/MascotaAlimentos/static/css/main.d9391aac.css.map",
+    "main.faed269c.js.map": "/MascotaAlimentos/static/js/main.faed269c.js.map",
+    "787.28525a86.chunk.js.map": "/MascotaAlimentos/static/js/787.28525a86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9391aac.css",
+    "static/js/main.faed269c.js"
+  ]
+}
