@@ -114,6 +114,18 @@ function MascotaTabla(){
         setAlimento(eleccion)
     }
 
+    function getMascotaOptios(){
+        let options = [
+        ]
+        for ( const [key, value] of Object.entries(tablaConversion)) {
+            options.push(
+                <option value={key}>{key}</option>
+            )             
+        }
+
+        return options
+    }
+
     return(
         <div>
         <NavBar></NavBar>
@@ -150,8 +162,9 @@ function MascotaTabla(){
         <div className="col-6">
         <select onChange={eleccionAnimal} className="form-select mb-3">
             <option selected>Elige un tipo de mascota</option>
-            <option value='perro'>Perro</option>
-            <option value='gato'>Gato</option>
+            {
+                getMascotaOptios()
+            }
         </select>
         </div>
         
