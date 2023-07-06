@@ -1,60 +1,104 @@
 import NavBar from "./NavBar";
 import {useState} from 'react'
 function MascotaTabla(){
-    const [animal,setAnimal]=useState('')
-    const [cantidad,setCantidad]=useState('-')
+    const [animal, setAnimal]=useState('')
+    const [cantidad, setCantidad]=useState('-')
     const [alimento, setAlimento]=useState('-')
-    const [peso,setPeso]=useState('-')
-    function Calcular(){
-        let total=''
-        if(animal=='perro'){
-            if(alimento=="nutrecan"){
-                if(peso>40){
-                    total="500+"
-                }else if(peso>30){
-                    total="400-500"
-                }else if(peso>20){
-                    total="300-400"
-                }else if(peso>10){
-                    total="200-300"
-                }else if(peso>5){
-                    total="100-200"
-                }else{
-                    total="50-100"
-                }
-            }else if(alimento=="dogchow"){
-                if(peso>30){
-                    total="350+"
-                }else if(peso>20){
-                    total="250-350"
-                }else if(peso>15){
-                    total="200-250"
-                }else if(peso>10){
-                    total="150-200"
-                }else if(peso>5){
-                    total="80-150"
-                }else{
-                    total="40-80"
-                }
+    const [peso, setPeso]=useState('-')
+
+    const tablaConversion = {
+        perro: {
+            nutrecan: {
+                0: "50-100",
+                5: "100-200",
+                10: "200-300",
+                20: "300-400",
+                30: "400-500",
+                40: "500+"
+            },
+            dogchow: {
+                0: "50-100",
+                5: "80-150",
+                10: "150-200",
+                15: "200-250",
+                20: "250-350",
+                30: "350+",
             }
-        }else{
-            if(alimento=="agiliti"){
-                if(peso>10){
-                    total="150+"
-                }else if(peso>7){
-                    total="110-150"
-                }else if(peso>5){
-                    total="80-110"
-                }else if(peso>3){
-                    total="50-80"
-                }else{
-                    total="30-50"
-                }
+        },
+        gato: {
+            agility: {
+                0: "30-50",
+                3: "50-80",
+                5: "80-110",
+                7: "110-150",
+                10: "150+",
+            }
         }
     }
+
+    function Calcular(){
+        let total=''
+        const animalData = tablaConversion[animal]
+        if (animalData) {
+            const alimentoData = animalData[alimento]
+            if (alimentoData) {
+                for ( const [key, value] of Object.entries(alimentoData)) {
+                    if (key < peso) {
+                        total = value 
+                    }      
+                }
+            }
+        }
+
+    //     if(animal=='perro'){
+    //         if(alimento=="nutrecan"){
+    //             if(peso>40){
+    //                 total="500+"
+    //             }else if(peso>30){
+    //                 total="400-500"
+    //             }else if(peso>20){
+    //                 total="300-400"
+    //             }else if(peso>10){
+    //                 total="200-300"
+    //             }else if(peso>5){
+    //                 total="100-200"
+    //             }else{
+    //                 total="50-100"
+    //             }
+    //         }else if(alimento=="dogchow"){
+    //             if(peso>30){
+    //                 total="350+"
+    //             }else if(peso>20){
+    //                 total="250-350"
+    //             }else if(peso>15){
+    //                 total="200-250"
+    //             }else if(peso>10){
+    //                 total="150-200"
+    //             }else if(peso>5){
+    //                 total="80-150"
+    //             }else{
+    //                 total="40-80"
+    //             }
+    //         }
+    //     }else{
+    //         if(alimento=="agiliti"){
+    //             if(peso>10){
+    //                 total="150+"
+    //             }else if(peso>7){
+    //                 total="110-150"
+    //             }else if(peso>5){
+    //                 total="80-110"
+    //             }else if(peso>3){
+    //                 total="50-80"
+    //             }else{
+    //                 total="30-50"
+    //             }
+    //     }
+    // }
         
         setCantidad(total)
     }
+
     function eleccionAnimal(e){
         const animal=e.target.value
         setAnimal(animal)
@@ -64,6 +108,7 @@ function MascotaTabla(){
         const peso=e.target.value
         setPeso(peso)
     }
+
     function eleccionComida(e){
         const eleccion=e.target.value
         setAlimento(eleccion)
@@ -98,7 +143,7 @@ function MascotaTabla(){
         <select onChange={eleccionComida} className="form-select mb-3">
             <option selected>Elige un tipo de alimento</option>
             <option value="nutrecan">NutreCan</option>
-            <option value="agiliti">Agiliti</option>
+            <option value="agility">Agility</option>
             <option value="dogchow">DogChow</option>
         </select>
         </div>
